@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC Desktop App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calc">
+        <span id="title">Calculadora de IMC</span>
+        <div class="calc-content">
+            <input type='number' id='peso' placeholder='Peso (Kg)' class='input' />
+            <input type='number' id='altura' placeholder='Altura (Cm)' class='input' />
+            <button onclick="calcular()" id='calcular' class='btn'>Calcular</button>
+            <span id='resultado'>Você está com peso ideal?</span>
+        </div>
+    </div>
+    <script src="../eel.js"></script>
+    <script>
+        result_text = document.getElementById("resultado");
+        peso = document.getElementById("peso");
+        altura = document.getElementById("altura"); 
+        function calcular(){
+            eel.imc_calculador(peso.value, altura.value)(resultado);
+        }
+        function resultado(resultado){
+            result_text.innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>
